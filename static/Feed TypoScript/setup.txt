@@ -1,0 +1,31 @@
+includeLibs.jl_atom = EXT:jl_atom/pi1/class.tx_jlatom_pi1.php
+
+plugin.jl_atom = USER
+plugin.jl_atom.userFunc = tx_jlatom_pi1->main
+
+plugin.jl_atom {
+
+   feedConfig {
+	
+	   rootPid = {$plugin.jl_atom.feedConfig.rootPid}
+		baseUrl = {$plugin.jl_atom.feedConfig.baseUrl}
+	   title = {$plugin.jl_atom.feedConfig.title}
+		authorName = {$plugin.jl_atom.feedConfig.authorName}
+		authorEmail = {$plugin.jl_atom.feedConfig.authorEmail}
+		realUrl = {$plugin.jl_atom.feedConfig.realUrl}
+		limit = {$plugin.jl_atom.feedConfig.limit}
+		
+	}
+	
+}
+
+xmlPage = PAGE
+xmlPage.typeNum = 2008
+xmlPage.config.disableAllHeaderCode = 1
+xmlPage.config.sendCacheHeaders = 0
+xmlPage.doctype = none
+xmlPage.config.additionalHeaders = Content-type: application/atom+xml
+xmlPage.xhtml_cleaning = 0
+xmlPage.admPanel = 0
+
+xmlPage.10 < plugin.jl_atom

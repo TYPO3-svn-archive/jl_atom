@@ -1,0 +1,32 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<ROOT>
+		<type>array</type>
+		<el>
+		<include_in_feed>
+			<TCEforms>
+				<label>Include in Feed:</label>
+				<config>
+					<type>select</type>
+					<items type="array">
+						<numIndex index="0" type="array">
+							<numIndex index="0">Sub-pages of a page</numIndex>
+							<numIndex index="1">SUBPAGES</numIndex>
+						</numIndex>
+						<numIndex index="1" type="array">
+							<numIndex index="0">Content items within a page</numIndex>
+							<numIndex index="1">CONTENT_ITEMS</numIndex>
+						</numIndex>
+						<numIndex index="2" type="array">
+							<numIndex index="0">List of pages</numIndex>
+							<numIndex index="1">PAGE_LIST</numIndex>						
+						</numIndex>
+					</items>
+				</config>
+			</TCEforms>
+		</include_in_feed>
+		</el>
+	</ROOT>
+</T3DataStructure>

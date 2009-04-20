@@ -1,0 +1,21 @@
+<T3DataStructure>
+	<ROOT>
+		<type>array</type>
+		<el>
+			<message>
+				<TCEforms>
+					<label>Bumblyfudger</label>
+						<config>
+							<type>select</type>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="0">Foo</numIndex>
+									<numIndex index="1">Bar</numIndex>
+								</numIndex>
+							</items>
+						</config>
+				</TCEforms>
+			</message>
+		</el>	
+	</ROOT>
+</T3DataStructure>

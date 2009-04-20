@@ -1,0 +1,20 @@
+###
+# These are the default constants for the Atom Feed Publisher extension (jl_atom)
+###
+
+plugin.jl_atom {
+
+	feedConfig {
+	
+		rootPid = 1
+		baseUrl = http://www.yoursite.com/
+	   title = New Content Feed
+		authorName = You
+		authorEmail = you@yoursite.com
+		realUrl = 0
+		limit = 10
+		generator = jl_atom Extension for TYPO3	
+	}
+
+
+}
