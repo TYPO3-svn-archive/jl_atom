@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 Jason Lefkowitz <jason.lefkowitz@changetowin.org>
+*  (c) 2007-2009 Jason Lefkowitz <jason.lefkowitz@changetowin.org>
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -101,7 +101,7 @@ class tx_jlatom_pi1 extends tslib_pibase {
 			
 			$entryFields = array(
       
-				'###ENTRY_TITLE###' => htmlspecialchars($row['title']), 
+				'###ENTRY_TITLE###' => $this->convertMicrosoftBullshit($row['title']), 
 				'###ENTRY_URI###'	=> $entryUrl,
 				'###ENTRY_ID###'	=> $entryUrl,
 				'###ENTRY_UPDATED###' => $this->convertUnixTimeToRFC3339($row['crdate']),
@@ -148,6 +148,56 @@ class tx_jlatom_pi1 extends tslib_pibase {
 		return $convertedTime;
 	
 	}
+ 
+ function convertMicrosoftBullshit($text)
+ {
+   
+   $search = array(
+      '&',
+      '<',
+      '>',
+      '"',
+      chr(212),
+      chr(213),
+      chr(210),
+      chr(211),
+      chr(209),
+      chr(208),
+      chr(201),
+      chr(145),
+      chr(146),
+      chr(147),
+      chr(148),
+      chr(151),
+      chr(150),
+      chr(133)
+   );
+   
+
+   $replace = array(
+      '&amp;',
+      '&lt;',
+      '&gt;',
+      '&quot;',
+      '&#8216;',
+      '&#8217;',
+      '&#8220;',
+      '&#8221;',
+      '&#8211;',
+      '&#8212;',
+      '&#8230;',
+      '&#8216;',
+      '&#8217;',
+      '&#8220;',
+      '&#8221;',
+      '&#8211;',
+      '&#8212;',
+      '&#8230;'
+   );
+   
+   return str_replace($search, $replace, $text); 
+   
+ }
 
 	
 }
